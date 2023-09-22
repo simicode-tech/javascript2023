@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cardBody {
+        border: 1px solid red;
+        border-radius: 20px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>event</h1>
+    <button onclick="show()">click me</button><br /><br />
+    <div
+      style="width: 400px"
+      onmouseover="over()"
+      onmouseout="out()"
+      id="cardImg"
+    >
+      <img src="images/img1.jpeg" alt="" width="400" />
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minim.</p>
+    </div>
+    <script src="event.js"></script>
+  </body>
+</html>
