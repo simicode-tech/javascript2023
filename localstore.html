@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .formInput {
+        position: relative;
+        margin-bottom: 10px;
+      }
+      .formLabel {
+        position: absolute;
+        bottom: 30px;
+        left: 10px;
+        background-color: white;
+        padding: 0px 5px;
+        font-size: 1rem;
+      }
+      input {
+        padding: 10px 10px 10px 15px;
+        width: 500px;
+        border-radius: 10px;
+        box-shadow: none;
+      }
+      #myForm {
+        width: 500px;
+        margin: auto;
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" method="post" id="myForm">
+      <div class="formInput">
+        <span class="formLabel"> username </span>
+        <input type="text" placeholder="username" id="username" />
+      </div>
+      <div class="formInput">
+        <span class="formLabel"> Password </span>
+        <input type="password" placeholder="password" id="password" />
+      </div>
+      <button>Submit</button>
+    </form>
+    <script src="localstorage.js"></script>
+  </body>
+</html>

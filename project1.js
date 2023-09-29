@@ -65,3 +65,33 @@ function renderProduct() {
   });
 }
 renderProduct();
+
+const linkItem = document.querySelectorAll(".nav-item");
+const navLink = document.querySelectorAll(".nav-link");
+linkItem.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    console.log(link);
+    console.log(link.classList.contains("nav-link"));
+  });
+});
+// const linkItems = document.querySelectorAll(".nav-item");
+
+// linkItems.forEach((link) => {
+//   link.addEventListener("click", function (e) {
+//     // Toggle the "active" class on the clicked element
+//     link.classList.toggle("active");
+
+//     // Remove the "active" class from other elements
+//     linkItems.forEach((otherLink) => {
+//       if (otherLink !== link) {
+//         otherLink.classList.remove("active");
+//       }
+//     });
+
+//     // Check if the clicked element contains the "nav-link" class
+//     const containsNavLinkClass = link.classList.contains("nav-link");
+
+//     console.log("Clicked element:", link);
+//     console.log("Contains 'nav-link' class:", containsNavLinkClass);
+//   });
+// });

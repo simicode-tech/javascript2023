@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25th Anniversary Celebration</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        overflow: hidden;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+      }
+
+      .balloon {
+        position: absolute;
+        background: url(images1.png);
+        pointer-events: none;
+        background-size: cover;
+        transform: translate(-50%, -50%);
+        animation: animate 2s linear infinite;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: translate(-50%, -50%);
+          opacity: 1;
+          filter: hue-rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, 100vh);
+          opacity: 0;
+          filter: hue-rotate(72deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Modal Trigger Button -->
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#myModal"
+    >
+      Celebrate 25 Years
+    </button> -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              25th Anniversary Celebration
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Balloons will be displayed here -->
+            <div class="balloon-container"></div>
+            <p>Celebrating 25 wonderful years of success and growth!</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Function to create and display multiple balloons in a festive manner
+      function celebrate25Years() {
+        let balloonContainer = document.querySelector(".balloon-container");
+        let numBalloons = 100; // Number of balloons to display
+        let interval = 100; // Interval between balloon appearances (adjust as needed)
+        let balloonsCreated = 0;
+
+        function createBalloon() {
+          let balloon = document.createElement("div");
+          balloon.className = "balloon";
+          let size = Math.random() * 200;
+          balloon.style.width = 40 + size + "px";
+          balloon.style.height = 40 + size + "px";
+
+          // Position balloons randomly across the page
+          balloon.style.left = Math.random() * 100 + "vw";
+          balloon.style.top = Math.random() * 100 + "vh";
+
+          balloonContainer.appendChild(balloon);
+          balloonsCreated++;
+
+          if (balloonsCreated == numBalloons) {
+            clearInterval(balloonInterval); // Stop creating balloons
+            setTimeout(function () {
+              myModal.hide();
+            }, 200); // Close the modal after 200ms (adjust as needed)
+          }
+        }
+
+        // Trigger the modal to open
+        let myModal = new bootstrap.Modal(document.getElementById("myModal"));
+        myModal.show();
+
+        // Create balloons at regular intervals
+        let balloonInterval = setInterval(createBalloon, interval);
+      }
+
+      // Listen for page load event
+      window.addEventListener("load", celebrate25Years);
+    </script>
+
+    <!-- Bootstrap JavaScript and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </body>
+</html>
